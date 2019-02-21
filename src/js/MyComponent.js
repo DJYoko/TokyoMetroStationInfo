@@ -24,7 +24,7 @@ export class MyComponent extends React.Component {
         return (
             <div>
 				<MyH1 />
-				<LineContainer lines={LINE_CODES} />
+				<LineContainer line_codes={LINE_CODES} />
 			</div>
    		 );
     }

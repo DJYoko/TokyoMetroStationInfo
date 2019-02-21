@@ -5,6 +5,7 @@ import { Line } from './line';
 export class LineContainer extends Component {
   constructor(props){
     super(props);
+	  console.log(this.props.line_codes);
   }
 
   componentWillMount(){
@@ -24,7 +25,7 @@ export class LineContainer extends Component {
   
   render() {
     return (
-      <div>yrst
+      <div>
 		<Line line_cd={1}>LINE</Line>
 		</div>
     );
@@ -32,9 +33,9 @@ export class LineContainer extends Component {
 }
 	 
 LineContainer.defaultProps = {
-	lines: [],
+	line_codes: [],
 }	 
 	 
 LineContainer.propTypes = {
-	lines: PropTypes.array,
+	line_codes: PropTypes.array,
 }
