@@ -1,21 +1,20 @@
 const path = require('path');
 
 module.exports = {
-	entry: "./src/app.js",
+	entry: './src/js/app.js',
 	output: {
-		path: path.resolve(__dirname, "dest"),
-		filename: "app.js"
+		path: path.resolve(__dirname, 'docs/js'),
+		filename: 'app.js'
 	},
 	module: {
 		rules: [
 			{
 				exclude: /node_modules/,
-				loader: "babel-loader",
+				loader: 'babel-loader',
 				query: {
 					presets: ['react', 'es2015'],
 				},
 			}
 		],
-		
 	},
 };
