@@ -7,21 +7,6 @@ export class LineContainer extends Component {
     super(props);
 	  console.log(this.props.line_codes);
   }
-
-  componentWillMount(){
-    // this.fetchResponse();
-  }
-  
-  // リストの更新
-  fetchResponse(){
-    fetch('http://localhost:3001/todos')
-    .then( res => res.json() )
-    .then( res => {
-      this.setState({
-        todo : res
-      });
-    })
-  }
   
   render() {
     return (
