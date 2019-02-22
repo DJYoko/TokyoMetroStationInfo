@@ -7,15 +7,20 @@ export class Line extends Component {
   }
   render() {
     return (      
-		<div>this line_cd is {this.props.line_cd}</div>
+		<div style={this.style()}>this line name is {this.props.line.line_name}</div>
     );
   }
+  style() {
+    return {
+      'background': this.props.color,
+    }
+  }
 }
-	 
+
 Line.defaultProps = {
-	line_cd: 0,
-}	 
-	 
+	color: '#ffffff',
+}
+
 Line.propTypes = {
-	line_cd: PropTypes.number
+	color: PropTypes.string
 }
