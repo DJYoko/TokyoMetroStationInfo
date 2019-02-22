@@ -23,6 +23,12 @@ export class LineContainer extends Component {
         );
       return rows;
   }
+	style() {
+    return {
+		'marginBottom' : '12px',
+		'colo' : '#ffffff',
+    }
+  }
 }
 
 LineContainer.defaultProps = {

@@ -7,12 +7,19 @@ export class Line extends Component {
   }
   render() {
     return (      
-		<div style={this.style()}>this line name is {this.props.line.line_name}</div>
+		<div style={this.style()}>
+			<span>
+				{this.props.line.line_name}
+			</span>			
+		</div>
     );
   }
   style() {
     return {
       'background': this.props.color,
+		'padding' : '12px',
+		'marginBottom': '12px',
+		'color': '#ffffff',
     }
   }
 }
