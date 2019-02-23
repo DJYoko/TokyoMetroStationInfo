@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _JSXStyle from 'styled-jsx/style'
+import css from 'styled-jsx/css'
 
 export class Line extends Component {
   constructor(props){
@@ -7,19 +9,17 @@ export class Line extends Component {
   }
   render() {
     return (      
-		<div style={this.style()}>
-			<span>
+		<div className="line" style={this.style()}>
+			<div className="line-name">
 				{this.props.line.line_name}
-			</span>			
+			</div>
+			<style jsx>{styles}</style>
 		</div>
     );
   }
   style() {
     return {
-      'background': this.props.color,
-		'padding' : '12px',
-		'marginBottom': '12px',
-		'color': '#ffffff',
+      'background': this.props.color,		
     }
   }
 }
@@ -31,3 +31,16 @@ Line.defaultProps = {
 Line.propTypes = {
 	color: PropTypes.string
 }
+
+const styles = css`
+	.line {
+		padding : 8px;
+		margin-bottom: 12px;
+		color: #262626;
+	}
+	.line-name {
+		padding: 2px;
+		background: #ffffff;
+		display:inline-block;
+	}
+`
