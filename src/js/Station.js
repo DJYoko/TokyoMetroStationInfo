@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _JSXStyle from 'styled-jsx/style';
 import css from 'styled-jsx/css';
-import {StationContainer} from './StationContainer';
 
-export class Line extends Component {
+export class Station extends Component {
   constructor(props){
     super(props);
   }
   render() {
     return (      
-		<div className="line" style={this.style()}>
-			<div className="line-name">
-				{this.props.line.line_name}
+		<div className="station" style={this.style()}>
+			<div className="station-name">
+				{this.props.station.station_name}
 			</div>
-			<StationContainer stations={this.props.line.station_l}></StationContainer>
 			<style jsx>{styles}</style>
 		</div>
     );
@@ -26,27 +24,19 @@ export class Line extends Component {
   }
 }
 
-Line.defaultProps = {
-	color: '#ffffff',
-}
-
-Line.propTypes = {
-	color: PropTypes.string
-}
-
 const styles = css`
-	.line {
+	.Station {
 		border-radius: 20px;
 		padding : 8px 10px;
 		color: #262626;
 	}
-	.line-name {
+	.station-name {
 		border-radius: 12px;
 		line-height:24px;
 		height: 24px;
 		font-size: 12px;
 		padding: 0 12px;
 		background: #ffffff;
-		display:inline-block;
+		display:lines-block;
 	}
 `
