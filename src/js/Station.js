@@ -26,17 +26,6 @@ export class Station extends Component {
 
 const styles = css`
 	.Station {
-		border-radius: 20px;
-		padding : 8px 10px;
 		color: #262626;
-	}
-	.station-name {
-		border-radius: 12px;
-		line-height:24px;
-		height: 24px;
-		font-size: 12px;
-		padding: 0 12px;
-		background: #ffffff;
-		display:lines-block;
 	}
 `

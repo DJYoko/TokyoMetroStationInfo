@@ -21,7 +21,7 @@ export class Line extends Component {
   }
   style() {
     return {
-      'background': this.props.color,		
+      'borderColor': this.props.color,		
     }
   }
 }
@@ -36,17 +36,15 @@ Line.propTypes = {
 
 const styles = css`
 	.line {
+		border-style:solid;
+		border-width:8px;
 		border-radius: 20px;
-		padding : 8px 10px;
+		padding : 16px;
 		color: #262626;
 	}
 	.line-name {
-		border-radius: 12px;
-		line-height:24px;
-		height: 24px;
-		font-size: 12px;
-		padding: 0 12px;
-		background: #ffffff;
-		display:inline-block;
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 12px;
 	}
 `

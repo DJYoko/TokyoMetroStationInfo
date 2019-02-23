@@ -36,23 +36,26 @@ StationContainer.propTypes = {
 	stations: PropTypes.array,
 }
 
-
 const styles = css`
+	.station_container {
+		background: #ffffff;
+border-radius: 20px;
+	}
 	.station_outer {
 		display:inline-block;
 		position:relative;
-margin-right: 20px;
+		margin-right: 20px;
 	}
 	.station_outer:after {
 		content:'.';
 		position:absolute;
-text-indent:-9999px;
-top:50%;
-right:-15px;
-height:2px;
-width:10px;
-background:#262626;
+		text-indent:-9999px;
+		top:50%;
+		right:-15px;
+		height:2px;
+		width:10px;
+		background:#262626;
 		display:block;
-margin-top:-1px;
+		margin-top:-1px;
 	}
 `
