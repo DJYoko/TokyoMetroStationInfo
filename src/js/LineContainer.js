@@ -9,7 +9,6 @@ export class LineContainer extends Component {
   }
 
   render() {
-      console.log('LineContainer render');
     return (
       <div>
         {this.renderLines()}
