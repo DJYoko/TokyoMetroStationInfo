@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _JSXStyle from 'styled-jsx/style'
+import css from 'styled-jsx/css'
 import { Line } from './Line';
 import LineColor from '../data/LineColor';
 
@@ -10,24 +12,21 @@ export class LineContainer extends Component {
 
   render() {
     return (
-      <div>
-        {this.renderLines()}
+      <div className="line_container">
+        {this.props.lines.map((line,index) =>
+			<div className="line_outer" key={index}>
+				<Line line={line} color={LineColor[line.line_cd]}></Line>
+			</div>
+        )}
+		<style jsx>{styles}</style>
       </div>
     )
   }
 
-  renderLines() {
-      const rows = this.props.lines.map((line,index) =>
-          <Line line={line} color={LineColor[line.line_cd]} key={index}></Line>
-        );
+  renderLines() {      
       return rows;
   }
-	style() {
-    return {
-		'marginBottom' : '12px',
-		'colo' : '#ffffff',
-    }
-  }
+	
 }
 
 LineContainer.defaultProps = {
@@ -37,3 +36,10 @@ LineContainer.defaultProps = {
 LineContainer.propTypes = {
 	lines: PropTypes.array,
 }
+
+
+const styles = css`
+	.line_outer {
+		margin-bottom: 16px;
+	}
+`
