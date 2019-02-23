@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _JSXStyle from 'styled-jsx/style'
-import css from 'styled-jsx/css'
+import _JSXStyle from 'styled-jsx/style';
+import css from 'styled-jsx/css';
 import { Line } from './Line';
 import LineColor from '../data/LineColor';
 
