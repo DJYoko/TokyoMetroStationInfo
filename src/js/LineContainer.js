@@ -40,9 +40,9 @@ LineContainer.propTypes = {
 
 const styles = css`
 	.line_container {
-		padding-top: 16px;
+		padding-top: 30px;
 	}
 	.line_outer {
-		margin-bottom: 16px;
+		margin-bottom: 30px;
 	}
 `
