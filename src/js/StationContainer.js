@@ -13,18 +13,17 @@ export class StationContainer extends Component {
     return (
       <div className="station_container">
         {this.props.stations.map((station,index) =>
-			<div className={'station_outer' + (index === this.props.stations.length - 1 ? ' last' : '')} key={index}>
-				<Station station={station}></Station>
+			<div className={'station_outer'} key={index}>
+				<Station station={station} is_last={this.isLast(index)}></Station>
 			</div>
         )}
 		<style jsx>{styles}</style>
       </div>
     )
   }
-
-  renderStations() {      
-      return rows;
-  }
+	isLast(index) {
+		return index === this.props.stations.length - 1;
+	}
 	
 }
 
@@ -39,23 +38,11 @@ StationContainer.propTypes = {
 const styles = css`
 	.station_container {
 		background: #ffffff;
-border-radius: 20px;
+		border-radius: 20px;
 	}
 	.station_outer {
 		display:inline-block;
 		position:relative;
 		margin-right: 20px;
-	}
-	.station_outer:after {
-		content:'.';
-		position:absolute;
-		text-indent:-9999px;
-		top:50%;
-		right:-15px;
-		height:2px;
-		width:10px;
-		background:#262626;
-		display:block;
-		margin-top:-1px;
 	}
 `
