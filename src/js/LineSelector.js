@@ -24,6 +24,7 @@ export class LineSelector extends Component {
             {this.lineListOptions(this.props.lines)}
           </select>
         </div>
+        <style jsx>{styles}</style>
       </div>
     );
   }
@@ -50,16 +51,7 @@ export class LineSelector extends Component {
 }
 
 const styles = css`
-  .line {
-    border-style: solid;
-    border-width: 8px;
-    border-radius: 20px;
-    padding: 16px;
-    color: #262626;
-  }
-  .line-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 12px;
+  label {
+    margin-right: 4px;
   }
 `;

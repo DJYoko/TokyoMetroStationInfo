@@ -16,11 +16,13 @@ export class Container extends React.Component {
   render() {
     return (
       <div>
-        <LineSelector
-          lines={LINES}
-          selectedLineCd={this.state.selectedLineCd}
-          onChangeValue={this.onChangeValue}
-        />
+        <div style={{ marginBottom: "12px" }}>
+          <LineSelector
+            lines={LINES}
+            selectedLineCd={this.state.selectedLineCd}
+            onChangeValue={this.onChangeValue}
+          />
+        </div>
         <LineContainer
           lines={this.filterSelectedLine(this.state.selectedLineCd)}
         />

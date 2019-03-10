@@ -14,11 +14,11 @@ export class LineContainer extends Component {
     return (
       <div className="line_container">
         {this.props.lines.map((line, index) => (
-          <div className="line_outer col-xs-6" key={index}>
+          <div className="line_outer" key={index}>
             <Line line={line} color={LineColor[line.line_cd]} />
           </div>
         ))}
-        <style jsx>{styles}</style>
+        <style jsx>{styles}</style>;
       </div>
     );
   }
@@ -38,9 +38,8 @@ LineContainer.propTypes = {
 
 const styles = css`
   .line_container {
-    padding-top: 30px;
   }
   .line_outer {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
   }
 `;
