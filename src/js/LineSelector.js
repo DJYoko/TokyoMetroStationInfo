@@ -36,9 +36,11 @@ export class LineSelector extends Component {
 		)
   }
   onChangeValue(event) {
-	  this.setState({
+	  const state = {
 	  	selectedLineCd: parseInt(event.target.value)
-	  });
+	  };
+	  this.setState(state);
+	  this.props.onChangeValue(state);
   }
 }
 
