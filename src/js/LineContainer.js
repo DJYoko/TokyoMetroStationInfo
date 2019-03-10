@@ -1,48 +1,46 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import _JSXStyle from 'styled-jsx/style';
-import css from 'styled-jsx/css';
-import { Line } from './Line';
-import LineColor from '../data/LineColor';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import _JSXStyle from "styled-jsx/style";
+import css from "styled-jsx/css";
+import { Line } from "./Line";
+import LineColor from "../data/LineColor";
 
 export class LineContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
   render() {
     return (
       <div className="line_container">
-        {this.props.lines.map((line,index) =>
-			<div className="line_outer col-xs-6" key={index}>
-				<Line line={line} color={LineColor[line.line_cd]}></Line>
-			</div>
-        )}
-		<style jsx>{styles}</style>
+        {this.props.lines.map((line, index) => (
+          <div className="line_outer col-xs-6" key={index}>
+            <Line line={line} color={LineColor[line.line_cd]} />
+          </div>
+        ))}
+        <style jsx>{styles}</style>
       </div>
-    )
+    );
   }
 
-  renderLines() {      
-      return rows;
+  renderLines() {
+    return rows;
   }
-	
 }
 
 LineContainer.defaultProps = {
-	lines: [],
-}
+  lines: []
+};
 
 LineContainer.propTypes = {
-	lines: PropTypes.array,
-}
-
+  lines: PropTypes.array
+};
 
 const styles = css`
-	.line_container {
-		padding-top: 30px;
-	}
-	.line_outer {
-		margin-bottom: 30px;
-	}
-`
+  .line_container {
+    padding-top: 30px;
+  }
+  .line_outer {
+    margin-bottom: 30px;
+  }
+`;
