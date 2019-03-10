@@ -6,13 +6,17 @@ import css from 'styled-jsx/css';
 export class LineSelector extends Component {
   constructor(props){
     super(props);
+	this.state = {
+		selectedLineCd : props.selectedLineCd,
+	};
+	  this.onChangeValue = this.onChangeValue.bind(this);
   }
   render() {
     return (   
 		<div className="form-inline">
 			<div className="form-group">
 				<label>select line </label>
-				<select className="form-control">
+				<select className="form-control" value={this.state.selectedLineCd} onChange={this.onChangeValue}>
 					{this.lineListOptions(this.props.lines)}
 				</select>
 			</div>
@@ -30,6 +34,11 @@ export class LineSelector extends Component {
 				{line.line_name}
 			</option>
 		)
+  }
+  onChangeValue(event) {
+	  this.setState({
+	  	selectedLineCd: parseInt(event.target.value)
+	  });
   }
 }
 
