@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+import _JSXStyle from "styled-jsx/style";
+import css from "styled-jsx/css";
 import { LineContainer } from "./LineContainer";
 import { LineSelector } from "./LineSelector";
+import { MapContainer } from "./MapContainer";
 import LINES from "../data/lines";
 
 export class Container extends React.Component {
@@ -26,6 +29,7 @@ export class Container extends React.Component {
         <LineContainer
           lines={this.filterSelectedLine(this.state.selectedLineCd)}
         />
+        <MapContainer />
       </div>
     );
   }
@@ -38,5 +42,4 @@ export class Container extends React.Component {
     this.setState(state);
   }
 }
-
 ReactDOM.render(<Container />, document.getElementById("app"));
