@@ -18,7 +18,7 @@ export class LineContainer extends Component {
             <Line line={line} color={LineColor[line.line_cd]} />
           </div>
         ))}
-        <style jsx>{styles}</style>;
+        <style jsx>{styles}</style>
       </div>
     );
   }
