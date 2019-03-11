@@ -1,5 +1,5 @@
 {
-	"name": "Tokyo Metro Station Info",
+	"name": "TokyoMetroStationInfo",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -26,6 +26,7 @@
 		"webpack-cli": "^3.2.3"
 	},
 	"dependencies": {
+		"leaflet": "^1.4.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.8.2",
 		"react-dom": "^16.8.2",
