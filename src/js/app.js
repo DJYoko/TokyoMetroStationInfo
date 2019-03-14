@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import _JSXStyle from "styled-jsx/style";
 import css from "styled-jsx/css";
-import { LineContainer } from "./LineContainer";
+import { LineContainer } from "./info/LineContainer";
 import { LineSelector } from "./LineSelector";
-import { MapContainer } from "./MapContainer";
+import { MapContainer } from "./map/MapContainer";
 import LINES from "../data/lines";
 
 export class Container extends React.Component {

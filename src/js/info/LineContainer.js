@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import _JSXStyle from "styled-jsx/style";
 import css from "styled-jsx/css";
 import { Line } from "./Line";
-import LineColor from "../data/LineColor";
+import LineColor from "../../data/LineColor";
 
 export class LineContainer extends Component {
   constructor(props) {
