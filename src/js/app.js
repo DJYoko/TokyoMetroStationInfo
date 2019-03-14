@@ -29,7 +29,9 @@ export class Container extends React.Component {
         <LineContainer
           lines={this.filterSelectedLine(this.state.selectedLineCd)}
         />
-        <MapContainer />
+        <MapContainer
+          line={this.filterSelectedLine(this.state.selectedLineCd)}
+        />
       </div>
     );
   }
