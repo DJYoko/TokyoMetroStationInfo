@@ -30,7 +30,7 @@ export class Container extends React.Component {
           lines={this.filterSelectedLine(this.state.selectedLineCd)}
         />
         <MapContainer
-          line={this.filterSelectedLine(this.state.selectedLineCd)}
+          line={this.filterSelectedLine(this.state.selectedLineCd)[0]}
         />
       </div>
     );

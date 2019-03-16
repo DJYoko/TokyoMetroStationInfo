@@ -18,6 +18,7 @@ export class MapContainer extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
+        {this.stationMarkers(this.props.line.station_l)}
       </Map>
     );
   }
@@ -25,12 +26,21 @@ export class MapContainer extends Component {
   mayMapStyle() {
     return { width: "100%", height: "600px" };
   }
+  stationMarkers(stations) {
+    return stations.map((station, index) => (
+      <Marker key={index} position={[station.lat, station.lon]}>
+        <Popup>{station.station_name}</Popup>
+      </Marker>
+    ));
+  }
 }
 
 MapContainer.defaultProps = {
-  lines: []
+  line: [],
+  position: [35.658034, 139.701636]
 };
 
 MapContainer.propTypes = {
-  lines: PropTypes.array
+  line: PropTypes.object,
+  position: PropTypes.array
 };
