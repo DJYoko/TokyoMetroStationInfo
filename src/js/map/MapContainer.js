@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import _JSXStyle from "styled-jsx/style";
 import css from "styled-jsx/css";
-const position = [35.658034, 139.701636];
 
 export class MapContainer extends Component {
   constructor(props) {
@@ -12,8 +11,10 @@ export class MapContainer extends Component {
   }
 
   render() {
+    const _position = this.getInitialMapPosition();
+
     return (
-      <Map center={position} zoom={14} style={this.mayMapStyle()}>
+      <Map center={_position} zoom={14} style={this.mayMapStyle()}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -33,10 +34,33 @@ export class MapContainer extends Component {
       </Marker>
     ));
   }
+
+  getInitialMapPosition() {
+    if (
+      typeof this.props.line !== "object" ||
+      typeof this.props.line.station_l !== "object" ||
+      this.props.line.station_l.length === 0
+    ) {
+	  // defaut positions
+      return this.props.position;
+    }
+
+    const stations = this.props.line.station_l;
+    let sumLat = 0;
+    let sumLon = 0;
+
+    stations.forEach((station, index) => {
+      sumLat = sumLat + station.lat;
+      sumLon = sumLon + station.lon;
+    });
+    const avgLat = sumLat / stations.length;
+    const avgLon = sumLon / stations.length;
+    return [avgLat, avgLon];
+  }
 }
 
 MapContainer.defaultProps = {
-  line: [],
+  line: null,
   position: [35.658034, 139.701636]
 };
 
