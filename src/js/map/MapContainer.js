@@ -58,7 +58,6 @@ export class MapContainer extends Component {
 
     stations.forEach((station, index) => {
       _bound.right = Math.max(_bound.right, station.lat);
-      console.log(station.lat, station.lon);
       _bound.left = Math.min(_bound.left, station.lat);
       _bound.top = Math.max(_bound.top, station.lon);
       _bound.bottom = Math.min(_bound.bottom, station.lon);
