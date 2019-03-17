@@ -63,7 +63,6 @@ export class MapContainer extends Component {
       _bound.top = Math.max(_bound.top, station.lon);
       _bound.bottom = Math.min(_bound.bottom, station.lon);
     });
-    console.log(_bound);
     this.refs.map.leafletElement.fitBounds(
       [[_bound.left, _bound.bottom], [_bound.right, _bound.top]],
       {
