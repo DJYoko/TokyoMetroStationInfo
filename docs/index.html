@@ -8,9 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-   crossorigin=""/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!--[if lt IE 9]>
@@ -22,11 +20,67 @@
 <body>
 	<div class="container">
 		<h1>Tokyo Metro Station Info</h1>
+		<p class="text-right info-link"><span data-toggle="modal" data-target="#info_modal" class="glyphicon glyphicon-info-sign"></span></p>
 		<div id="app"></div>
+		<div id="info_modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h3 class="modal-title">info</h3>
+					</div>
+					<div class="modal-body">
+						<h4>web framework &amp; libraries</h4>
+						<ul style="padding-left:20px;">
+							<li>React <a href="https://reactjs.org/" target="_blank">https://reactjs.org/</a></li>
+							<li>React-Leaflet <a href="https://react-leaflet.js.org/" target="_blank">https://react-leaflet.js.org/</a></li>
+							<li>Bootstrap: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a></li>
+						</ul>
+						<hr>
+						<h4>Tokyo Metro Data</h4>
+						<ul style="padding-left:20px;">
+							<li>line: <a href="http://www.ekidata.jp/api/" target="_blank">駅データ</a></li>
+							<li>map: <a href="http://osm.org/" target="_blank">open street map</a></li>
+						</ul>
+						<hr>
+						<hr>
+						<h4>source</h4>
+						<ul style="padding-left:20px;">
+							<li>GitHub <a href="https://github.com/DJYoko/TokyoMetroStationInfo" target="_blank">https://github.com/DJYoko/TokyoMetroStationInfo</a></li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
 <script src="js/app.js"></script>
+<style>
+	.container {
+		position: relative;
+	}
+
+	.info-link {
+		position: absolute;
+		top: 10px;
+		right: 0;
+	}
+
+	.info-link .glyphicon {
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.5);
+		font-size: 16px;
+		padding: 4px 4px 2px;
+		border-radius: 16px;
+		color: #262626;
+	}
+
+</style>
+
 </html>
