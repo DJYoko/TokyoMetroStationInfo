@@ -1,27 +1,19 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import PropTypes from "prop-types";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import PropTypes from 'prop-types';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
-export class MapContainer extends Component {
+export class MapWrap extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <Map
-        center={this.props.position}
-        zoom="14"
-        style={this.mayMapStyle()}
-        ref="map"
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
+      <MapContainer center={this.props.position} zoom='14' style={this.mayMapStyle()} ref='mapRef'>
+        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />
         {this.stationMarkers(this.props.line.station_l)}
-      </Map>
+      </MapContainer>
     );
   }
 
@@ -34,7 +26,7 @@ export class MapContainer extends Component {
   }
 
   mayMapStyle() {
-    return { width: "100%", height: "600px" };
+    return { width: '100%', height: '600px' };
   }
   stationMarkers(stations) {
     return stations.map((station, index) => (
@@ -53,7 +45,7 @@ export class MapContainer extends Component {
       top: stations[0].lon,
       left: stations[0].lat,
       bottom: stations[0].lon,
-      right: stations[0].lat
+      right: stations[0].lat,
     };
 
     stations.forEach((station, index) => {
@@ -62,19 +54,19 @@ export class MapContainer extends Component {
       _bound.top = Math.max(_bound.top, station.lon);
       _bound.bottom = Math.min(_bound.bottom, station.lon);
     });
-    this.refs.map.leafletElement.fitBounds(
-      [[_bound.left, _bound.bottom], [_bound.right, _bound.top]],
-      {
-        padding: [20, 20]
-      }
-    );
+
+    // this.mapRef.leafletElement.fitBounds(
+    //   [
+    //     [_bound.left, _bound.bottom],
+    //     [_bound.right, _bound.top],
+    //   ],
+    //   {
+    //     padding: [20, 20],
+    //   }
+    // );
   }
   hasStations() {
-    if (
-      typeof this.props.line !== "object" ||
-      typeof this.props.line.station_l !== "object" ||
-      this.props.line.station_l.length === 0
-    ) {
+    if (typeof this.props.line !== 'object' || typeof this.props.line.station_l !== 'object' || this.props.line.station_l.length === 0) {
       // default
       return false;
     }
@@ -82,12 +74,12 @@ export class MapContainer extends Component {
   }
 }
 
-MapContainer.defaultProps = {
+MapWrap.defaultProps = {
   line: null,
-  position: [35.658034, 139.701636]
+  position: [35.658034, 139.701636],
 };
 
-MapContainer.propTypes = {
+MapWrap.propTypes = {
   line: PropTypes.object,
-  position: PropTypes.array
+  position: PropTypes.array,
 };
