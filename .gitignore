@@ -1,3 +1,4 @@
 benchmark/
 node_modules/
 mix-manifest.json
+benchmark/*
